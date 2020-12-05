@@ -20,7 +20,7 @@ pub fn desc<T: PartialOrd>(arr: &mut [T]) -> &mut [T] {
 }
 
 /// PartialOrd 表示 T 的值是可比较的。
-/// Copy 表示 T 的值是可复制的。
+/// ptr::swap 交换指针的值。
 /// 参考：
 /// https://kaisery.github.io/trpl-zh-cn/ch10-01-syntax.html
 /// https://kaisery.github.io/trpl-zh-cn/ch10-02-traits.html
