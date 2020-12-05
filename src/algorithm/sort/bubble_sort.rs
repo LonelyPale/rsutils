@@ -1,13 +1,26 @@
-// 升序 Ascending
+/**
+冒泡排序：
+1、比较相邻的元素。如果第一个比第二个大，就交换它们两个；
+2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；
+3、针对所有的元素重复以上的步骤，除了最后一个；
+4、重复步骤1~3，直到排序完成。
+*/
+
+/// 升序 Ascending
 pub fn asc<T: PartialOrd + Copy>(arr: &mut [T]) -> &mut [T] {
     sort(arr, true)
 }
 
-// 降序 Descending
+/// 降序 Descending
 pub fn desc<T: PartialOrd + Copy>(arr: &mut [T]) -> &mut [T] {
     sort(arr, false)
 }
 
+/// PartialOrd 表示 T 的值是可比较的。
+/// Copy 表示 T 的值是可复制的。
+/// 参考：
+/// https://kaisery.github.io/trpl-zh-cn/ch10-01-syntax.html
+/// https://kaisery.github.io/trpl-zh-cn/ch10-02-traits.html
 pub fn sort<T: PartialOrd + Copy>(arr: &mut [T], is_asc: bool) -> &mut [T] {
     if arr.len() == 0 {
         return arr;
